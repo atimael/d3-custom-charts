@@ -1,0 +1,47 @@
+.chart {
+    overflow: visible;
+}
+
+.chart text {
+    fill: #95a5a6;
+}
+
+.line {
+    transition: all 0.3s ease-out;
+}
+
+.line-line {
+    fill: none;
+    stroke: #0d89cc;
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.line-area {
+    fill: rgba(13, 137, 204, 0.1);
+    stroke-width: 0;
+}
+
+.axis-line {
+    stroke: #e78009;
+}
+
+.axis-label {
+    text-anchor: middle;
+    font-size: 0.8em;
+    letter-spacing: 0.01em;
+}
+
+.axis-tick {
+    font-size: 0.9em;
+    transition: all 0.3s ease-out;
+}
+
+.axis-horizontal .axis-tick {
+    text-anchor: middle;
+}
+
+.axis-vertical .axis-tick {
+    dominant-baseline: middle;
+    text-anchor: end;
+}
