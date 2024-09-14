@@ -20,11 +20,17 @@ export const TreeChart = () => {
         const width = 800;
         const height = 800;
 
-        const cluster = d3.cluster<TreeChartData>().size([width, height - 100]);
+        // const cluster = d3.cluster<TreeChartData>().size([width, height - 100]);
+
+        const treeLayout = d3
+            .tree<TreeChartData>()
+            .size([width, height - 100])
+            .separation((a, b) => (a.parent === b.parent ? 1 : 2));
 
         // Give the data to this cluster layout:
         const root = d3.hierarchy(data);
-        cluster(root);
+        treeLayout(root);
+        // cluster(root);
 
         // Extract nodes and links for rendering
         setNodes(root.descendants());

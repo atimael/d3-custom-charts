@@ -45,6 +45,75 @@ export type TreeChartData = {
     children?: TreeChartNode[];
 };
 
+export type FlowChartData = {
+    id: number;
+    name: string;
+    time: string;
+    children?: FlowChartData[];
+};
+
+export const flowchartData: FlowChartData = {
+    id: 1,
+    name: 'Ringing',
+    time: '0.3s',
+    children: [
+        {
+            id: 2,
+            name: 'IVR Answered',
+            time: '0.3s',
+            children: [
+                {
+                    id: 3,
+                    name: 'IVR Script',
+                    time: '0.3s',
+                    children: [
+                        {
+                            id: 4,
+                            name: 'Menu',
+                            time: '0.3s',
+                            children: [
+                                {
+                                    id: 5,
+                                    name: 'Digit Pressed',
+                                    time: '0.3s',
+                                    children: [
+                                        {
+                                            id: 6,
+                                            name: 'Exit Point',
+                                            time: '0.3s',
+                                            children: [
+                                                {
+                                                    id: 7,
+                                                    name: 'Schedule Callback',
+                                                    time: '0.3s',
+                                                    children: [
+                                                        {
+                                                            id: 8,
+                                                            name: 'Initial Action',
+                                                            time: '0.3s',
+                                                            children: [
+                                                                {
+                                                                    id: 9,
+                                                                    name: 'IVR Answered',
+                                                                    time: '0.3s',
+                                                                },
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+    ],
+};
+
 export const treechartData: TreeChartData = {
     name: 'root',
     children: [
@@ -108,19 +177,7 @@ export const treechartData: TreeChartData = {
                     children: [
                         {
                             name: 'Check ANI | Check Bill phone number',
-                            children: [
-                                {
-                                    name: 'Exit Point | Contact not available',
-                                    children: [
-                                        {
-                                            name: 'Get Value | Get you Bill',
-                                            children: [
-                                                { name: 'Caller | Hangup' },
-                                            ],
-                                        },
-                                    ],
-                                },
-                            ],
+                            children: [],
                         },
                     ],
                 },
